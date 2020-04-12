@@ -1,0 +1,25 @@
+version: '2.0'
+
+services:
+  web1:
+    build: .
+    command: bundle exec web1 serve --incremental --host 192.168.99.100
+    ports:
+      - "3000:3000" # web1 serve
+    volumes:
+      - .:/html
+  web2:
+    build: .
+    command: bundle exec web2 serve --incremental --host 192.168.99.100
+    ports:
+      - "4000:4000" # web2 serve
+    volumes:
+      - .:/html    
+  web3:
+    build: .
+    command: bundle exec web3 serve --incremental --host 192.168.99.100
+    ports:
+      - "5000:5000" # web3 serve
+    volumes:
+      - .:/html    
+      
